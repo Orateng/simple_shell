@@ -2,6 +2,7 @@ Simple_Shell repository
 ---------------------------------------------
 Collaborators:
 Orateng Maila
+and
 Tonny Mapanga
 
 ---------------------------------------------
