@@ -24,6 +24,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 
 		if (input == -1)
 		{
+			free(buff);
 			exit(EXIT_SUCCESS);
 		}
 
