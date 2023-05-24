@@ -22,8 +22,7 @@ int main(void)
 
         if (input == -1)
         {
-            printf("exit");
-            return (-1);
+            exit(EXIT_SUCCESS);
         }
 
         format_input(argv, buff, "\n");
@@ -31,7 +30,7 @@ int main(void)
         child_process = fork();
         if (child_process == -1)
         {
-            perror("Failed to create a child process");
+            perror("Failed to create a child process\n");
             return (1);
         }
 

@@ -10,7 +10,7 @@ void _execute_command(char *argv[], char *envp[])
 {
     if (execve(argv[0], argv, envp) == -1)
     {
-        perror(argv[0]);
+        perror("./simple_shell");
         exit(EXIT_FAILURE);
     }
 }
