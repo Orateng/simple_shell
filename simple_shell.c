@@ -27,7 +27,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 			exit(EXIT_SUCCESS);
 		}
 
-		format_input(args, buff, "\n");
+		format_input(args, buff, " \n");
 
 		child_process = fork();
 		if (child_process == -1)
