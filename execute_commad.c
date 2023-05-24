@@ -3,6 +3,7 @@
 /**
  * _execute_command - function to execute the program
  * @argv: arguments array
+ * @args: argumets arry
  * @envp: environment variables array
  * Return: Void
  */

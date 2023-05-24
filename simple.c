@@ -2,6 +2,9 @@
 
 /**
  * main - Entry point
+ * @argc: argument counter
+ * @argv: argument vector
+ * @envp: environment variables array
  *
  * Return: 0 Success
  */
