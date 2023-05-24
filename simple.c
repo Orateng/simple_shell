@@ -17,7 +17,7 @@ int main(void)
 
     while (1)
     {
-        printf("Shell$ ");
+        write(STDOUT_FILENO, "#cisfun$ ", 9);
         input = getline(&buff, &length, stdin);
 
         if (input == -1)
