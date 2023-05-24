@@ -6,11 +6,11 @@
  * @envp: environment variables array
  * Return: Void
  */
-void _execute_command(char *argv[], char *envp[])
+void _execute_command(char *args[], char *envp[], char **argv)
 {
-	if (execve(argv[0], argv, envp) == -1)
+	if (execve(args[0], args, envp) == -1)
 	{
-		perror("./simple_shell");
+		perror(argv[0]);
 		exit(EXIT_FAILURE);
 	}
 }

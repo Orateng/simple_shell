@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-void _execute_command(char *argv[], char *envp[]);
+void _execute_command(char *argv[], char *envp[], char **args);
 void format_input(char **argv, char *buff, char *delim);
 
 #endif

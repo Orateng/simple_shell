@@ -5,14 +5,14 @@
  *
  * Return: 0 Success
  */
-int main(void)
+int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 {
 	char *buff = NULL;
 	size_t length = 0;
 	ssize_t input;
 	pid_t child_process;
 	int status;
-	char *argv[100];
+	char *args[100];
 
 	while (1)
 	{
@@ -24,7 +24,7 @@ int main(void)
 			exit(EXIT_SUCCESS);
 		}
 
-		format_input(argv, buff, "\n");
+		format_input(args, buff, "\n");
 
 		child_process = fork();
 		if (child_process == -1)
@@ -35,7 +35,7 @@ int main(void)
 
 		if (child_process == 0)
 		{
-			_execute_command(argv, __environ);
+			_execute_command(args, envp, argv);
 		}
 		else
 		{
