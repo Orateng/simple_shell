@@ -19,7 +19,8 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 
 	while (1)
 	{
-		write(STDOUT_FILENO, "#cisfun$ ", 9);
+		if (isatty(STDIN_FILENO) != 0)
+			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		input = getline(&buff, &length, stdin);
 
 		if (input == -1)
