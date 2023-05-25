@@ -8,13 +8,14 @@
  */
 void format_input(char **argv, char *buff, char *delim)
 {
-	int i;
+	int i = 0;
 	char *token = strtok(buff, delim);
 
-	for (i = 0; token != NULL; i++)
+	while (token != NULL)
 	{
 		argv[i] = token;
 		token = strtok(NULL, delim);
+		i++;
 	}
 	argv[i] = NULL;
 }
