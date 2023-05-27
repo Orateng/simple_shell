@@ -15,7 +15,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 	ssize_t input;
 	pid_t child_process;
 	int status;
-	char *args[100];
+	char *args[100], *command;
 
 	while (1)
 	{
@@ -28,8 +28,14 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 			free(buff);
 			exit(EXIT_SUCCESS);
 		}
+		if (buff[input] == '\n')
+			buff[input] = '\0';
 
 		format_input(args, buff, " \n");
+		command = get_command(args);
+
+		if (command != NULL)
+			args[0] = command;
 
 		child_process = fork();
 		if (child_process == -1)
@@ -40,6 +46,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 
 		if (child_process == 0)
 		{
+			printf("%s - %s\n", args[0], args[1]);
 			_execute_command(args, envp, argv);
 		}
 		else

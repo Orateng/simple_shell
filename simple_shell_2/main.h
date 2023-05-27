@@ -11,5 +11,6 @@
 
 void _execute_command(char *argv[], char *envp[], char **args);
 void format_input(char **argv, char *buff, char *delim);
+char *get_command(char *argv[]);
 
 #endif
